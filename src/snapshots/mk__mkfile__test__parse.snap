@@ -1,0 +1,42 @@
+---
+source: src/mkfile.rs
+expression: rules
+---
+MkFile {
+    rules: {
+        Virtual(
+            "all",
+        ): Rule {
+            dependencies: [
+                Concrete(
+                    "my_file",
+                ),
+            ],
+            commands: [],
+        },
+        Concrete(
+            "my_file",
+        ): Rule {
+            dependencies: [
+                Concrete(
+                    "my_file.c",
+                ),
+                Concrete(
+                    "another_file.c",
+                ),
+            ],
+            commands: [
+                "gcc -o my_file my_file.c",
+                "magic my_file",
+            ],
+        },
+        Virtual(
+            "clean",
+        ): Rule {
+            dependencies: [],
+            commands: [
+                "rm -f my_file",
+            ],
+        },
+    },
+}

@@ -1,0 +1,1 @@
+((last_update (((Shallow mydir) ((secs_since_epoch 1684101184) (nanos_since_epoch 84845176))) ((Shallow hello.txt) ((secs_since_epoch 1684101184) (nanos_since_epoch 79845123))) ((Shallow mydir/hello.txt) ((secs_since_epoch 1684101184) (nanos_since_epoch 89845230))))))

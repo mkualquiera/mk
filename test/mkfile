@@ -1,0 +1,15 @@
+
+
+hello.txt: 
+    echo "Hello!" > hello.txt
+
+mydir:
+    mkdir mydir
+
+mydir/hello.txt: hello.txt mydir
+    cp hello.txt mydir/hello.txt
+
+$clean:
+    rm -rf mydir hello.txt
+
+$all: mydir/hello.txt
